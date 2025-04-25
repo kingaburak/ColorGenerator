@@ -10,7 +10,6 @@ const GeneratorPage: React.FC = () => {
       <main className="flex-grow p-4">
         <Header />
       </main>
-
       <Footer />
     </div>
   );

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Palette from "./Palette";
 
 const ColorGenerator: React.FC = () => {
   const [colors, setColors] = useState<string[]>([]);
+  const [count, setCount] = useState<number>(2);
 
   const getRandomHex = (): string => {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -12,26 +13,42 @@ const ColorGenerator: React.FC = () => {
   const fetchPalette = async () => {
     try {
       const seedColor = getRandomHex();
-      const mode = "analogic";
       const response = await fetch(
-        `https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${mode}&count=5`
+        `https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=analogic&count=${count}`
       );
       const data = await response.json();
       const hexColors = data.colors.map((c: any) => c.hex.value);
       setColors(hexColors);
     } catch (error) {
-      console.error("blad pobierania dancyh:", error);
+      console.error("Błąd pobierania danych:", error);
     }
   };
 
+  useEffect(() => {
+    const handleDecrease = () => setCount((prev) => Math.max(2, prev - 1));
+    const handleIncrease = () => setCount((prev) => Math.min(10, prev + 1));
+    const handleGenerate = () => fetchPalette();
+
+    window.addEventListener("decreaseColorCount", handleDecrease);
+    window.addEventListener("increaseColorCount", handleIncrease);
+    window.addEventListener("generatePalette", handleGenerate);
+
+    return () => {
+      window.removeEventListener("decreaseColorCount", handleDecrease);
+      window.removeEventListener("increaseColorCount", handleIncrease);
+      window.removeEventListener("generatePalette", handleGenerate);
+    };
+  }, [count]);
+
+  useEffect(() => {
+    const countElement = document.getElementById("color-count");
+    if (countElement) {
+      countElement.textContent = count.toString();
+    }
+  }, [count]);
+
   return (
-    <div className="flex flex-col items-center justify-center gap-8">
-      <button
-        onClick={fetchPalette}
-        className="mb-6 px-20 py-4 mt-20 bg-pink2 text-white font-bold rounded-xl hover:bg-blue transition"
-      >
-        Generuj nową paletę
-      </button>
+    <div className="w-full max-w-5xl">
       <Palette colors={colors} />
     </div>
   );
