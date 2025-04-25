@@ -3,7 +3,7 @@ import Palette from "./Palette";
 
 const ColorGenerator: React.FC = () => {
   const [colors, setColors] = useState<string[]>([]);
-  const [count, setCount] = useState<number>(2);
+  const [count, setCount] = useState<number>(5); 
 
   const getRandomHex = (): string => {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -23,6 +23,10 @@ const ColorGenerator: React.FC = () => {
       console.error("Błąd pobierania danych:", error);
     }
   };
+
+  useEffect(() => {
+    fetchPalette();
+  }, []);
 
   useEffect(() => {
     const handleDecrease = () => setCount((prev) => Math.max(2, prev - 1));
