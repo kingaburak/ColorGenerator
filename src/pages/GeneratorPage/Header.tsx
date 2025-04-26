@@ -16,8 +16,8 @@ function Header() {
   };
 
   return (
-    <div className="flex flex-col min-h-[80vh] items-center w-full">
-      <div className="w-full bg-[#FFF6F7] border-b-8 border-beige pb-2 pt-20">
+    <div className="flex flex-col min-h-[80vh] items-center">
+      <div className="bg-[#FFF6F7] border-4 border-beige p-8 rounded-xl mt-24">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row pl-20">
           <div className="flex-1 flex flex-col items-center md:items-start justify-center gap-4">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
