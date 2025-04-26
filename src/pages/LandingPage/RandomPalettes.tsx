@@ -1,27 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface PaletteProps {
   colors: string[];
 }
 
-const Palette: React.FC<PaletteProps> = ({ colors }) => (
-  <div className="flex gap-4 mb-8 flex-wrap justify-center">
-    {colors.map((color, index) => (
-      <div
-        key={index}
-        className="flex flex-col items-center cursor-pointer"
-        onClick={() => navigator.clipboard.writeText(color)}
-        title="Kliknij, aby skopiować"
-      >
+const Palette: React.FC<PaletteProps> = ({ colors }) => {
+  const [message, setMessage] = useState<string>("");
+
+  const handleClick = (color: string) => {
+    navigator.clipboard.writeText(color);
+    setMessage(`Kolor ${color} został skopiowany!`);
+
+    setTimeout(() => setMessage(""), 2000);
+  };
+
+  return (
+    <div className="relative flex gap-4 mb-8 flex-wrap justify-center">
+      {colors.map((color, index) => (
         <div
-          className="w-16 h-24 rounded-xl shadow-lg mb-2 transition-transform hover:scale-105"
-          style={{ backgroundColor: color }}
-        />
-        <span className="text-sm font-mono text-[#5B4B44]">{color}</span>
-      </div>
-    ))}
-  </div>
-);
+          key={index}
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => handleClick(color)}
+          title="Kliknij, aby skopiować"
+        >
+          <motion.div
+            className="w-16 h-24 rounded-xl shadow-lg mb-2"
+            style={{ backgroundColor: color }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          />
+          <span className="text-sm font-mono text-[#5B4B44]">{color}</span>
+        </div>
+      ))}
+      {message && (
+        <motion.div
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black px-4 py-2 rounded-xl text-sm shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {message}
+        </motion.div>
+      )}
+    </div>
+  );
+};
 
 const getRandomHex = (): string => {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -62,10 +88,11 @@ export default function RandomPalettes() {
       </h2>
       <p className="text-[#5B4B44] max-w-3xl mx-auto mb-12">
         Zainspiruj się gotowymi zestawieniami, które pasują do każdego projektu!
-        Niezależnie od tego, czy tworzysz stronę internetową, aranżujesz wnętrze,
-        czy projektujesz logo – znajdziesz tu paletę, która idealnie wpisuje się w Twoje potrzeby.
+        Niezależnie od tego, czy tworzysz stronę internetową, aranżujesz
+        wnętrze, czy projektujesz logo – znajdziesz tu paletę, która idealnie
+        wpisuje się w Twoje potrzeby.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center relative">
         {palettes.map((colors, idx) => (
           <Palette key={idx} colors={colors} />
         ))}

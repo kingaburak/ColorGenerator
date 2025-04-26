@@ -3,7 +3,7 @@ import Palette from "./Palette";
 
 const ColorGenerator: React.FC = () => {
   const [colors, setColors] = useState<string[]>([]);
-  const [count, setCount] = useState<number>(5); 
+  const [count, setCount] = useState<number>(5);
 
   const getRandomHex = (): string => {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
