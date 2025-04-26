@@ -80,7 +80,10 @@ export default function RandomPalettes() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-20 py-12 bg-[#FFF7F0] text-center">
+    <section
+      id="palettes"
+      className="max-w-7xl mx-auto px-6 md:px-20 py-12 bg-[#FFF7F0] text-center"
+    >
       <h2 className="text-3xl font-bold mb-2">
         <span className="text-blue-500">Zobacz</span>{" "}
         <span className="text-green-500">przykładowe</span>{" "}
@@ -97,6 +100,6 @@ export default function RandomPalettes() {
           <Palette key={idx} colors={colors} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

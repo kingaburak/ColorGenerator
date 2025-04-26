@@ -4,7 +4,10 @@ import Buttons from "./Buttons";
 
 function Header() {
   return (
-    <div className="bg-yellow min-h-screen flex items-center justify-center">
+    <div
+      id="header"
+      className="bg-yellow min-h-screen flex items-center justify-center"
+    >
       <div className="flex flex-col items-center justify-center max-w-7xl w-full text-center">
         <Title />
         <TypingText />

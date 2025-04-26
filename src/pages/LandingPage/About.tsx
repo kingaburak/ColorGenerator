@@ -30,8 +30,10 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#FFF6EC] px-6 py-20 flex flex-col lg:flex-row items-center justify-center gap-16">
-      {/* Lewa kolumna z punktami */}
+    <section
+      id="about"
+      className="w-full bg-[#FFF6EC] px-6 py-20 flex flex-col lg:flex-row items-center justify-center gap-16"
+    >
       <div className="max-w-xl w-full space-y-8">
         {points.map((point, index) => (
           <div key={index} className="flex items-start gap-4">
@@ -72,14 +74,14 @@ const About: React.FC = () => {
         <motion.button
           onClick={handleClick}
           whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.10 }}
+          whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
           className="bg-orange text-white px-28 py-4 rounded-full text-sm font-semibold shadow-md hover:bg-pink transition-colors"
         >
           Zaczynamy!
         </motion.button>
       </div>
-    </div>
+    </section>
   );
 };
 
