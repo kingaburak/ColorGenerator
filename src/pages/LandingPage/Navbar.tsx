@@ -85,7 +85,7 @@ function Navbar() {
 
       {/* dropdown menu for small screens */}
       <motion.div
-        className={`lg:hidden absolute top-20 left-0 w-full bg-pink border-b-4 border-blue py-6 text-center ${
+        className={`lg:hidden absolute top-20 left-0 w-full text-darkblue bg-pink border-b-4 border-blue space-y-4 rounded-b-2xl py-6 text-center ${
           isOpen ? "block" : "hidden"
         }`}
         initial={{ opacity: 0, maxHeight: 0 }}

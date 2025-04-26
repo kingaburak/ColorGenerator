@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 function Buttons() {
   return (
     <div className="flex space-x-6 mt-10 text-xs justify-center w-full">
-      <Link to="/generator">
+      <RouterLink to="/generator">
         <motion.button
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.1 }}
@@ -13,9 +14,9 @@ function Buttons() {
         >
           Zacznij generowanie kolorów
         </motion.button>
-      </Link>
+      </RouterLink>
 
-      <Link to="/examples">
+      <Link to="palettes" smooth={true} duration={500} offset={-60}>
         <motion.button
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.1 }}
