@@ -10,7 +10,7 @@ const ColorBox = ({ hex }: ColorBoxProps) => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(hex);
-    setMessage(`Skopiowano: ${hex}`);
+    setMessage(`Kolor ${hex} został skopiowany!`);
 
     // resetowanie wiadomsoci po 2 sekundach
     setTimeout(() => setMessage(""), 2000);

@@ -17,7 +17,7 @@ function Title() {
   const titleText = "Color Generator";
 
   return (
-    <h1 className="text-7xl font-bold mb-6 leading-tight">
+    <h1 className="md:text-7xl text-5xl font-bold mb-6 leading-tight">
       {titleText.split("").map((char, index) => (
         <motion.span
           key={index}

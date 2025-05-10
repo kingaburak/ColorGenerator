@@ -16,7 +16,7 @@ const Palette: React.FC<PaletteProps> = ({ colors }) => {
   };
 
   return (
-    <div className="relative flex gap-4 mb-8 flex-wrap justify-center">
+    <div className="relative flex gap-2 sm:gap-4 mb-6 flex-wrap justify-center max-w-xs sm:max-w-none">
       {colors.map((color, index) => (
         <div
           key={index}
@@ -25,18 +25,20 @@ const Palette: React.FC<PaletteProps> = ({ colors }) => {
           title="Kliknij, aby skopiować"
         >
           <motion.div
-            className="w-16 h-24 rounded-xl shadow-lg mb-2"
+            className="w-12 h-20 sm:w-16 sm:h-24 rounded-xl shadow-lg mb-1 sm:mb-2"
             style={{ backgroundColor: color }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           />
-          <span className="text-sm font-mono text-[#5B4B44]">{color}</span>
+          <span className="text-[0.65rem] sm:text-sm font-mono text-[#5B4B44]">
+            {color}
+          </span>
         </div>
       ))}
       {message && (
         <motion.div
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black px-4 py-2 rounded-xl text-sm shadow-lg"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black px-3 py-1.5 rounded-xl text-xs shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

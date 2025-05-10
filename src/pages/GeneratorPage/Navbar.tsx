@@ -57,26 +57,6 @@ function Navbar() {
         </motion.div>
       </div>
 
-      {/* navbar links for larger screens */}
-      <div className="hidden lg:flex space-x-6 text-white text-sm font-bold pl-10 justify-center flex-1">
-        <motion.a
-          href="#about"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 10 }}
-        >
-          O aplikacji
-        </motion.a>
-        <motion.a
-          href="#palettes"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 10 }}
-        >
-          Przykładowe palety
-        </motion.a>
-      </div>
-
       {/* wroc do strony button for larger screens */}
       <div className="hidden lg:block">
         <motion.button
@@ -101,26 +81,6 @@ function Navbar() {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ overflow: "hidden" }}
       >
-        <motion.a
-          href="#about"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 10 }}
-          onClick={toggleMenu}
-          className="block"
-        >
-          O aplikacji
-        </motion.a>
-        <motion.a
-          href="#palettes"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 10 }}
-          onClick={toggleMenu}
-          className="block"
-        >
-          Przykładowe palety
-        </motion.a>
 
         <motion.button
           whileTap={{ scale: 0.95 }}
