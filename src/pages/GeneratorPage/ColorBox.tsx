@@ -39,7 +39,7 @@ const ColorBox = ({ hex }: ColorBoxProps) => {
       <motion.div
         onClick={handleCopy}
         style={{ backgroundColor: hex }}
-        className="w-28 h-40 m-2 rounded-xl shadow-md cursor-pointer flex items-end justify-center"
+        className="w-24 h-32 sm:w-28 sm:h-40 m-2 rounded-xl shadow-md cursor-pointer flex items-end justify-center"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 10 }}

@@ -10,19 +10,19 @@ const points = [
   {
     title: "Twórz własne palety kolorów!",
     description:
-      "Dobierz kolory idealne do projektu, bloga, pokoju... albo futerka! Mieszaj, łącz i baw się odcieniami jak prawdziwy artysta!",
+      "Dopasuj kolory do swojego projektu, strony internetowej, wnętrza lub innych potrzeb. Eksperymentuj z odcieniami i twórz harmonijne zestawienia kolorystyczne.",
     icon: paletteIcon,
   },
   {
     title: "Losuj do skutku",
     description:
-      "Jedno kliknięcie i… bum! Nowa paleta gotowa. Nie podoba się? Klikaj dalej, aż trafisz na tę idealną!",
+      "Kliknij raz, a aplikacja wygeneruje nową paletę. Jeśli ta Ci nie odpowiada, spróbuj kolejnej, aż znajdziesz idealne zestawienie kolorów.",
     icon: diceIcon,
   },
   {
     title: "Kopiuj kody kolorów",
     description:
-      "HEX? RGB? Nie ma sprawy! Skopiuj kod i używaj go w swoim projekcie w sekundę.",
+      "Kopiuj kody kolorów w formacie HEX i od razu używaj ich w swoim projekcie. Prosto i szybko.",
     icon: copyIcon,
   },
 ];
@@ -38,11 +38,14 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="w-full bg-[#FFF6EC] py-20 flex flex-col lg:flex-row items-center justify-center gap-16"
+      className="w-full bg-[#FFF6EC] py-20 px-12 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-center gap-16"
     >
       <div className="max-w-xl w-full space-y-8">
         {points.map((point, index) => (
-          <div key={index} className="flex items-start gap-10">
+          <div
+            key={index}
+            className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-10"
+          >
             <motion.div
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9, rotate: -5 }}

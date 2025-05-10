@@ -49,7 +49,7 @@ function TypingText() {
   }, [index, currentPhraseIndex, isBackspacing, phrases]);
 
   return (
-    <p className="text-darkblue font-bold text-xl mb-6">
+    <p className="text-darkblue font-bold md:text-xl mb-6">
       {text}
       <span className="cursor-blink">|</span>
     </p>

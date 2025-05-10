@@ -81,13 +81,12 @@ function Navbar() {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ overflow: "hidden" }}
       >
-
         <motion.button
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
           onClick={() => navigate("/")}
-          className="bg-yellow text-darkblue px-12 py-3 rounded-full text-sm font-bold shadow-md hover:bg-pink hover:text-white transition-colors mt-6"
+          className="bg-yellow text-darkblue px-12 py-3 rounded-full text-sm font-bold shadow-md hover:bg-blue hover:text-white transition-colors"
         >
           Wróć do strony głównej
         </motion.button>
