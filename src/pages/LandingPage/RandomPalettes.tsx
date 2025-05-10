@@ -85,9 +85,10 @@ export default function RandomPalettes() {
       className="max-w-7xl mx-auto px-6 md:px-20 py-12 bg-[#FFF7F0] text-center"
     >
       <h2 className="text-3xl font-bold mb-2">
-        <span className="text-blue-500">Zobacz</span>{" "}
-        <span className="text-green-500">przykładowe</span>{" "}
-        <span className="text-pink-500">palety kolorów!</span>
+        <span className="text-darkblue">Zobacz </span>
+        <span className="text-green">przykładowe </span>
+        <span className="text-darkpink">palety </span>
+        <span className="text-blue">kolorów! </span>
       </h2>
       <p className="text-[#5B4B44] max-w-3xl mx-auto mb-12">
         Zainspiruj się gotowymi zestawieniami, które pasują do każdego projektu!

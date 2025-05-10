@@ -8,7 +8,7 @@ function Header() {
       id="header"
       className="bg-yellow min-h-screen flex items-center justify-center"
     >
-      <div className="flex flex-col items-center justify-center max-w-7xl w-full text-center">
+      <div className="flex flex-col items-center justify-center max-w-7xl w-full text-center mt-10">
         <Title />
         <TypingText />
         <Buttons />

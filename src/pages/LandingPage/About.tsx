@@ -47,14 +47,15 @@ const About: React.FC = () => {
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9, rotate: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="w-24 h-24"
+              className="w-20 h-20 flex items-center justify-center aspect-square"
             >
               <motion.img
                 src={point.icon}
                 alt={`Ikona ${point.title}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain mt-8 p-0"
               />
             </motion.div>
+
             <div>
               <h4 className="text-darkblue font-bold text-xl pt-6">
                 {point.title}
@@ -84,7 +85,7 @@ const About: React.FC = () => {
             animate={hoverCat ? { opacity: 1, y: 0 } : { opacity: 0, y: 5 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            kliknij w przycisk żeby zacząć!
+            kliknij w przycisk żeby rozpocząć!
           </motion.div>
         </div>
 
