@@ -1,6 +1,9 @@
 # Generator Palet Kolorów 
 
-Aplikacja webowa pozwalająca losować palety kolorów. 
+## O projekcie
+Aplikacja webowa, która pozwala losować palety kolorów – idealne do projektów graficznych czy stron internetowych. 
+
+
 
 ## Live preview - Netlify
 
@@ -32,3 +35,6 @@ zobacz aplikację tutaj -> [https://colorgeneratorproject.netlify.app/](https://
    npm run dev
 ```
 
+## Wykorzystane technologie
+Aplikacja została zbudowana w React z TypeScriptem, stylowana przy użyciu Tailwind CSS, a animacje zostały dodane za pomocą Framer Motion.
+Aplikacja także korzysta z darmowego API - [TheColorAPI](https://www.thecolorapi.com) - które umożliwia generowanie palet kolorów na podstawie losowego koloru bazowego.
