@@ -1,13 +1,12 @@
 # 🎨 Generator Palet Kolorów 
 
-## O projekcie
-Aplikacja webowa, która pozwala losować palety kolorów – idealne do projektów graficznych czy stron internetowych. 
+### O projekcie
+To prosta aplikacja webowa, która pozwala generować palety kolorów na podstawie losowo wybranego koloru bazowego. Można losować nowe zestawy, kopiować kody HEX i szybko znaleźć inspirację kolorystyczną do projektu graficznego czy strony internetowej.
 
+### Live preview
 
-
-### Live preview - Netlify
-
-zobacz aplikację tutaj -> [https://colorgeneratorproject.netlify.app/](https://colorgeneratorproject.netlify.app/)
+Zobacz aplikację na Netlify!
+ 👉 [https://colorgeneratorproject.netlify.app/](https://colorgeneratorproject.netlify.app/)
 
 ## 🛠️ Instalacja i uruchomienie
 
