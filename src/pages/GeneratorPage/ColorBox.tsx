@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 type ColorBoxProps = {
   hex: string;
@@ -7,27 +7,22 @@ type ColorBoxProps = {
 
 const ColorBox = ({ hex }: ColorBoxProps) => {
   const [message, setMessage] = useState<string>("");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleCopy = () => {
     navigator.clipboard.writeText(hex);
     setMessage(`Kolor ${hex} został skopiowany!`);
-
-    // resetowanie wiadomsoci po 2 sekundach
     setTimeout(() => setMessage(""), 2000);
   };
 
-  // obliczamy jaki kolor dac
   const getLuminance = (hex: string) => {
-    // zmiana na rgb
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
     const b = parseInt(hex.slice(5, 7), 16);
-
-    //obliczamy jasnosc
     return 0.2126 * r + 0.7152 * g + 0.0722 * b;
   };
 
-  // ustawiamy kolor na czarny lub bialy
   const getTextColor = (hex: string) => {
     return getLuminance(hex) < 128 ? "white" : "black";
   };
@@ -35,7 +30,13 @@ const ColorBox = ({ hex }: ColorBoxProps) => {
   const textColor = getTextColor(hex);
 
   return (
-    <div className="relative">
+    <motion.div
+      ref={ref}
+      className="relative"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <motion.div
         onClick={handleCopy}
         style={{ backgroundColor: hex }}
@@ -55,12 +56,12 @@ const ColorBox = ({ hex }: ColorBoxProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           {message}
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
