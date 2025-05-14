@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface PaletteProps {
   colors: string[];
+  index: number;
 }
 
-const Palette: React.FC<PaletteProps> = ({ colors }) => {
+const Palette: React.FC<PaletteProps> = ({ colors, index }) => {
   const [message, setMessage] = useState<string>("");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleClick = (color: string) => {
     navigator.clipboard.writeText(color);
@@ -16,10 +19,16 @@ const Palette: React.FC<PaletteProps> = ({ colors }) => {
   };
 
   return (
-    <div className="relative flex gap-2 sm:gap-4 mb-6 flex-wrap justify-center max-w-xs sm:max-w-none">
-      {colors.map((color, index) => (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      className="relative flex gap-2 sm:gap-4 mb-6 flex-wrap justify-center max-w-xs sm:max-w-none"
+    >
+      {colors.map((color, i) => (
         <div
-          key={index}
+          key={i}
           className="flex flex-col items-center cursor-pointer"
           onClick={() => handleClick(color)}
           title="Kliknij, aby skopiować"
@@ -47,7 +56,7 @@ const Palette: React.FC<PaletteProps> = ({ colors }) => {
           {message}
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
@@ -100,7 +109,7 @@ export default function RandomPalettes() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center relative">
         {palettes.map((colors, idx) => (
-          <Palette key={idx} colors={colors} />
+          <Palette key={idx} colors={colors} index={idx} />
         ))}
       </div>
     </section>
