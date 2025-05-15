@@ -106,7 +106,7 @@ const About: React.FC = () => {
             animate={hoverCat ? { opacity: 1, y: 0 } : { opacity: 0, y: 5 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            kliknij w przycisk żeby rozpocząć!
+            Kliknij w przycisk, aby rozpocząć!
           </motion.div>
         </div>
 

@@ -52,7 +52,7 @@ const ColorBox = ({ hex }: ColorBoxProps) => {
 
       {message && (
         <motion.div
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black px-4 py-2 rounded-xl text-sm shadow-lg"
+          className="absolute text-center bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black px-4 py-2 rounded-xl text-sm shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

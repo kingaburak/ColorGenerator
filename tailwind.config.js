@@ -13,7 +13,6 @@ export default {
         purple: "#ECD7EE",
         lightpurple: "#FFEFF3",
         orange: "#FCD4BA",
-
         darkpink: "#EE82A4",
         darkpurple: "#C191DD",
         green: "#88C89B",

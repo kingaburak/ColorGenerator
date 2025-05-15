@@ -7,7 +7,7 @@ function TypingText() {
   const [isBackspacing, setIsBackspacing] = useState(false);
 
   const phrases = [
-    "Odkryj, jak łatwo możesz stworzyć idealną paletę kolorów!",
+    "Zobacz, jak łatwo możesz stworzyć idealną paletę kolorów!",
     "Twórz wyjątkowe kombinacje, które ożywią Twój projekt!",
     "Jedno kliknięcie i gotowe!",
   ];

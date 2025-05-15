@@ -44,11 +44,13 @@ function Navbar() {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           ></motion.div>
+
           <motion.div
             className="w-6 h-0.5 bg-white mb-1"
             animate={{ opacity: isOpen ? 0 : 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           ></motion.div>
+
           <motion.div
             className="w-6 h-0.5 bg-white"
             animate={{
