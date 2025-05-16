@@ -22,7 +22,7 @@ const points = [
   {
     title: "Kopiuj kody kolorów",
     description:
-      "Kopiuj kody kolorów w formacie HEX i od razu używaj ich w swoim projekcie. Prosto i szybko.",
+      "Kliknij na dowolny kolor, aby automatycznie skopiować jego kod HEX i od razu użyć go w swoim projekcie. Prosto, szybko i bez zbędnego przepisywania.",
     icon: copyIcon,
   },
 ];
@@ -54,7 +54,11 @@ const About: React.FC = () => {
               ref={ref}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
               className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-10"
             >
               <motion.div
