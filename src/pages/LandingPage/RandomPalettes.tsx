@@ -42,7 +42,7 @@ const RandomPalettes: React.FC = () => {
         <span className="text-darkpink">palety </span>
         <span className="text-blue">kolorów! </span>
       </h2>
-      <p className="text-[#5B4B44] max-w-3xl mx-auto mb-12">
+      <p className="text-black max-w-3xl mx-auto mb-12">
         Zainspiruj się gotowymi zestawieniami, które pasują do każdego projektu!
         Niezależnie od tego, czy tworzysz stronę internetową, aranżujesz
         wnętrze, czy projektujesz logo - znajdziesz tu paletę, która idealnie

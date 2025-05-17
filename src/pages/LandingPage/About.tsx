@@ -22,7 +22,7 @@ const points = [
   {
     title: "Kopiuj kody kolorów",
     description:
-      "Kliknij na dowolny kolor, aby automatycznie skopiować jego kod HEX i od razu użyć go w swoim projekcie. Prosto, szybko i bez zbędnego przepisywania.",
+      "Kliknij na dowolny kolor, aby automatycznie skopiować jego kod HEX\n i od razu użyć go w swoim projekcie. Prosto, szybko i bez zbędnego przepisywania.",
     icon: copyIcon,
   },
 ];
@@ -77,7 +77,9 @@ const About: React.FC = () => {
                 <h4 className="text-darkblue font-bold text-xl pt-6">
                   {point.title}
                 </h4>
-                <p className="text-sm mt-1">{point.description}</p>
+                <p className="text-sm mt-1 whitespace-pre-line">
+                  {point.description}
+                </p>
               </div>
             </motion.div>
           );
